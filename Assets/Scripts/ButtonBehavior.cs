@@ -1,20 +1,23 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ButtonBehavior : MonoBehaviour
 {
     SpriteRenderer myRenderer; //makes variable myRenderer of datatype SpriteRenderer
+    Animator myAnim;
+
 
     //SpriteRenderer gateRenderer;
 
     //public Color floorColor; //makes variable floorcolor of datatype Color
-    public Color pushedColor; //makes variable gatecolor of datatype color
-    public Color originalColor;
+    //public Color pushedColor; //makes variable gatecolor of datatype color
+    //public Color originalColor;
     public string boxType;
     public GameObject door;
     public bool toggleButton = false; //most of them will be the box button
     bool pushable = true;
+
 
 
     // Start is called before the first frame update
@@ -23,22 +26,37 @@ public class ButtonBehavior : MonoBehaviour
         myRenderer = gameObject.GetComponent<SpriteRenderer>(); //sets myRenderer to the correct SpriteRenderer
         //myBody = gameObject.GetComponent<Rigidbody2D>(); //sets myBody to the correct Rigidbody2d
         //gateRenderer = gameObject.GetComponent
-        myRenderer.color = originalColor;
+        //myRenderer.color = originalColor;
+        myAnim = gameObject.GetComponent<Animator>();
+        if(boxType == "Red Box"){
+            myAnim.SetBool("Red", true);
+        }
+        if(toggleButton == true){
+            myAnim.SetBool("Toggle Button", true);
+        } else {
+            myAnim.SetBool("Toggle Button", false);
+        }
     }
+
 
     void Update()
     {
         if(toggleButton == false){
-            pushable = true;
+            pushable = true; //if its a button that needs to stay pushed, then we set pushable to be true, meaning that nothing is hitting this button
         }
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other) //is something still on the button?
     {
-        if(other.gameObject.tag == "Player" || other.gameObject.tag == boxType){ //when it passes the gate it changes color
-            myRenderer.color = pushedColor;
+        if(other.gameObject.tag == "Player" || other.gameObject.tag == boxType){ 
+            if(boxType == "Red Box"){
+                myAnim.SetBool("Red Down", true);
+            } else {
+                myAnim.SetBool("Blue Down", true);
+            }
+            //myRenderer.color = pushedColor;
             //Destroy(door);
-            door.SetActive(false);
+            //door.SetActive(false);
             pushable = false;
         }
     }
@@ -47,10 +65,23 @@ public class ButtonBehavior : MonoBehaviour
     {
         if(other.gameObject.tag == "Player" || other.gameObject.tag == boxType){ //when it passes the gate it changes color
             if(pushable == true){
-                myRenderer.color = originalColor;
+                //myRenderer.color = originalColor;
                 //Destroy(door);
-                door.SetActive(true);
+                //door.SetActive(true);
+            if(boxType == "Red Box"){
+                myAnim.SetBool("Red Down", false);
+            } else {
+                myAnim.SetBool("Blue Down", false);
+            }
             }
         }
+    }
+
+    public void OpenDoor(){
+        door.SetActive(false);
+    }
+
+    public void CloseDoor(){
+        door.SetActive(true);
     }
 }

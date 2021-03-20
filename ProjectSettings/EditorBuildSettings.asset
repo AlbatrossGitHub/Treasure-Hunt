@@ -6,12 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Strength Puzzle.unity
-    guid: 9c817a487e0c55141871864a4ecf467f
+    path: Assets/Scenes/How Open.unity
+    guid: 45cffaf1444cdf34bb24838c365996f4
   - enabled: 1
-    path: Assets/Scenes/Treasure Hunt.unity
-    guid: aa3e0b9ebf1ce2e4ea576a8b9e487e99
+    path: Assets/Scenes/Push intro.unity
+    guid: bf74515f88bc57945ae67266cf5f930b
+  - enabled: 1
+    path: Assets/Scenes/How Up.unity
+    guid: 78a600d9f4b219d43b6a3082a50c585d
+  - enabled: 1
+    path: Assets/Scenes/Hexagons.unity
+    guid: ca074e890f9540843b4d770afa90fc83
+  - enabled: 1
+    path: Assets/Scenes/Where From.unity
+    guid: c1442784669a94e4a81b011f5a53c746
   - enabled: 1
     path: Assets/Scenes/Which Order.unity
     guid: 2941f515a8251414bbe9f279a65431a9
+  - enabled: 1
+    path: Assets/Scenes/Combo.unity
+    guid: 182fad6fd6eb119408cd30f4ee75d336
+  - enabled: 1
+    path: Assets/Scenes/Menu Screens/End Screen.unity
+    guid: 280240843137c8846b4ca62bc695c7c0
   m_configObjects: {}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7177269031282131052}
   - component: {fileID: 7177269031282131050}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Blue Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7177269031282131053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.06, y: -1.87, z: 0}
-  m_LocalScale: {x: 0.18742537, y: 0.5230232, z: 1}
+  m_LocalScale: {x: 0.18742537, y: 1.1638836, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -70,9 +70,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 7e6586bdf34882240b17fdbaf92b19b8, type: 3}
-  m_Color: {r: 0, g: 0.909804, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9568628, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -21,6 +21,7 @@ public class TopDownPlayerBehavior : MonoBehaviour
     void Start()
     {
         endTime = endTimeReset;
+        numScenes -= 1;
         //myRigidbody = gameObject.GetComponent<Rigidbody2D>();
     }
 
