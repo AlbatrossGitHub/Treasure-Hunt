@@ -8,6 +8,7 @@ TagManager:
   - Floor
   - Blue Box
   - Red Box
+  - Door Pair
   layers:
   - Default
   - TransparentFX

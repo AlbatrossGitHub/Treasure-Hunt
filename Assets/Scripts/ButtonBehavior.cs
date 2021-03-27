@@ -17,8 +17,11 @@ public class ButtonBehavior : MonoBehaviour
     public GameObject door;
     public bool toggleButton = false; //most of them will be the box button
     bool pushable = true;
-
-
+    private Color startColor;
+    private Color pushedColor;
+    private float opacity = .2f;
+    private SpriteRenderer doorRenderer = null;
+    private SpriteRenderer doorRenderer2 = null;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +39,17 @@ public class ButtonBehavior : MonoBehaviour
         } else {
             myAnim.SetBool("Toggle Button", false);
         }
+        if(door.GetComponent<SpriteRenderer>() != null){
+            //Debug.Log("Not Pair");
+            doorRenderer = door.GetComponent<SpriteRenderer>();
+        } else {
+            Debug.Log(door.transform.GetChild(0).gameObject.name);
+            doorRenderer = door.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+            doorRenderer2 = door.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>();
+        }
+        startColor = doorRenderer.color;
+        pushedColor = new Color(startColor.r-.4f, startColor.g-.4f, startColor.b-.4f, opacity);
+
     }
 
 
@@ -78,10 +92,26 @@ public class ButtonBehavior : MonoBehaviour
     }
 
     public void OpenDoor(){
-        door.SetActive(false);
+        //door.SetActive(false);
+        doorRenderer.color = pushedColor;
+        doorRenderer.gameObject.GetComponent<BoxCollider2D>().enabled=false;
+        if(doorRenderer2 != null){
+            doorRenderer2.color = pushedColor;
+            doorRenderer2.gameObject.GetComponent<BoxCollider2D>().enabled=false;
+            
+        }
+        GameObject.Find("Music").GetComponent<MusicManager>().PlayButtonSound();
     }
 
     public void CloseDoor(){
-        door.SetActive(true);
+        //door.SetActive(true);
+        doorRenderer.color = startColor;
+        doorRenderer.gameObject.GetComponent<BoxCollider2D>().enabled=true;
+        if(doorRenderer2 != null){
+            doorRenderer2.color = startColor;
+             doorRenderer2.gameObject.GetComponent<BoxCollider2D>().enabled=true;
+        
+        }
+        GameObject.Find("Music").GetComponent<MusicManager>().PlayButtonSound();
     }
 }

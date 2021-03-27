@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3541721031944883822}
   - component: {fileID: 3541721031944883823}
   - component: {fileID: 3541721031944883820}
-  - component: {fileID: 3541721031944883809}
   - component: {fileID: -936246118163842218}
+  - component: {fileID: 968119683781660084}
   m_Layer: 0
   m_Name: Red Button
   m_TagString: Untagged
@@ -99,22 +99,6 @@ MonoBehaviour:
   boxType: Red Box
   door: {fileID: 0}
   toggleButton: 1
---- !u!58 &3541721031944883809
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3541721031944883821}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2.5
 --- !u!95 &-936246118163842218
 Animator:
   serializedVersion: 3
@@ -134,3 +118,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &968119683781660084
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3541721031944883821}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.15169144, y: -0.8216326}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.2, y: 7.2}
+    newSize: {x: 5, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.6830645, y: 3.4994884}
+  m_EdgeRadius: 0
