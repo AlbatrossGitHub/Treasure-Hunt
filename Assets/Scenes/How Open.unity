@@ -2034,9 +2034,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4845574691000338747, guid: f238c047b55f5944990617138312ec41,
         type: 3}
-      propertyPath: endTimeReset
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 332854606}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f238c047b55f5944990617138312ec41, type: 3}
 --- !u!1001 &2135379891
@@ -2296,12 +2296,12 @@ PrefabInstance:
     - target: {fileID: 4944204512836187738, guid: a3a5947f850f41a4a9e7e5799f1d53d9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4944204512836187738, guid: a3a5947f850f41a4a9e7e5799f1d53d9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4944204512836187738, guid: a3a5947f850f41a4a9e7e5799f1d53d9,
         type: 3}

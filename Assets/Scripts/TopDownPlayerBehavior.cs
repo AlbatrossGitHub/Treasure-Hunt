@@ -23,9 +23,9 @@ public class TopDownPlayerBehavior : MonoBehaviour
 
     private SpriteRenderer shadowRenderer; 
 
-    //public GameObject transition;
+    public GameObject transition;
 
-    //Animator transitionAnimator;
+    Animator transitionAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,7 @@ public class TopDownPlayerBehavior : MonoBehaviour
         myAnim = gameObject.GetComponent<Animator>();
         endTime = endTimeReset;
         numScenes -= 1;
-        //transitionAnimator = transition.GetComponent<Animator>();
+        transitionAnimator = transition.GetComponent<Animator>();
         //myRigidbody = gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -45,9 +45,10 @@ public class TopDownPlayerBehavior : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
-        //transitionAnimator.SetInteger("Room Number", currentLevel);
+        Debug.Log(currentLevel);
+        transitionAnimator.SetInteger("Level Number", currentLevel-1);
         if(currentLevel < 2 || currentLevel == numScenes){
-            if(Input.anyKey){
+            if(Input.anyKeyDown){
                 NextScene();
             }
         }
